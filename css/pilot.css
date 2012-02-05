@@ -1,0 +1,289 @@
+/*
+ * Copyright Nicolas Garcia Belmonte and Maria Luz Caballero
+ *
+ * License: Creative Commons Attribution-ShareAlike 3.0 license.
+ */
+
+html, body {
+  margin:0;
+  padding:0;
+  font-family: "Lucida Grande", Verdana;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.node {
+  color: #fff;
+  border: 1px solid transparent;
+  background-image: -moz-linear-gradient(top center, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+}
+
+.node:hover {
+  border: 1px solid #9FD4FF;
+}
+
+div.pie-chart .node {
+  background-image: none;
+  border: none;
+}
+
+div.pie-chart .node:hover {
+  border: none;
+}
+
+div.pie-wrapper {
+  position: relative;
+}
+
+div.leaf-text-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+}
+
+div.leaf-text {
+  margin: auto; 
+}
+
+div.pie-chart > div {
+  margin: auto;
+}
+
+div.pie-chart {
+  opacity: 1;
+  -webkit-transition: opacity 150ms;
+  -moz-transition: opacity 150ms;
+  -o-transition: opacity 150ms;
+  transition: opacity 150ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+div.pie-chart.hidden {
+  opacity: 0;
+}
+
+.top-text {
+  font-size: 12px;
+  margin: 7px auto;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Crimson Text', 'Lucida Grande', Verdana;
+}
+
+h1 {
+  font-size: 2.2em;
+  color:#111;
+  margin: 5px;
+}
+
+h2, h3, h4 {
+  font-weight: normal;
+}
+
+a {
+  color:#23A4FF;
+}
+
+#container {
+  width: 1000px;
+  height: 550px;
+  margin:0 auto 10px auto;
+}
+
+#loading {
+  text-align: center;
+  font-style: italic;
+  margin: 30px auto;
+  font-size: 1em;
+  color: #fff;
+}
+
+.text {
+    margin: 7px;
+}
+
+.panel {
+  width: 1000px;
+  margin: 15px auto 5px;
+}
+
+.panel .description {
+  float: left;
+  padding: 2px 10px 10px 0;
+  width: 424px;
+  text-align: justify;
+  position: relative;
+}
+
+nav {
+  float: right;
+  font-size: 0.9em;
+  margin: 0 0 5px;
+  position: relative;
+  width: 402px;
+}
+
+nav .col {
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+nav .col:nth-child(1) {
+  position: absolute;
+  top: 100px;
+  right: 0;
+}
+
+#unselect-all, #go-to-parent {
+  background: #555;
+  color: white;
+  border-radius: 0.5em;
+  padding: 4px;
+
+}
+
+#go-to-parent {
+  text-decoration: none;
+  display: block;
+  width:130px;
+  padding: 4px 2px 4px 2px;
+  text-align: center;
+  font-size: 0.9em;
+  position: absolute;
+  top: 100px;
+  left:0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  padding: 2px 2px 2px 2px;
+  width: 130px;
+  text-align: center;
+}
+
+nav ul li.title {
+  font-weight: bold;
+  padding-top: 0;
+  border-bottom: 1px solid #555;
+}
+
+nav ul li.button {
+  cursor: pointer;
+}
+
+nav ul li.selected {
+  cursor: default;  
+  background-color: rgb(254, 244, 156);
+}
+
+nav ul li.button:hover {
+  background-color: #f5f5f5;
+}
+
+#color-legend {
+  height: 12px;
+  border: 1px solid #555;
+  margin: 5px auto;
+  padding-bottom: 4px;
+  background: url(../img/level-gradient.png);
+  
+  background: -webkit-gradient(linear, left center, right center, from(rgb(165, 0, 38)), 
+                                                                  color-stop(0.1, rgb(215, 48, 39)), 
+                                                                  color-stop(0.2, rgb(244, 109, 67)), 
+                                                                  color-stop(0.3, rgb(253, 174, 97)), 
+                                                                  color-stop(0.4, rgb(254, 224, 144)), 
+                                                                  color-stop(0.5, rgb(224, 243, 248)), 
+                                                                  color-stop(0.6, rgb(171, 217, 233)), 
+                                                                  color-stop(0.7, rgb(116, 173, 209)), 
+                                                                  color-stop(0.8, rgb(69, 117, 180)), 
+                                                                  to(rgb(49, 54, 149)));
+  
+  background: -moz-linear-gradient(left, rgb(165, 0, 38), 
+                                         rgb(215, 48, 39),
+                                         rgb(244, 109, 67), 
+                                         rgb(253, 174, 97), 
+                                         rgb(254, 224, 144), 
+                                         rgb(224, 243, 248), 
+                                         rgb(171, 217, 233), 
+                                         rgb(116, 173, 209), 
+                                         rgb(69, 117, 180), 
+                                         rgb(49, 54, 149));
+}
+
+#color-legend ul {
+  background: transparent;
+  color: white;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#color-legend ul li {
+  display: inline-block;
+  width: 33%;
+  font-size: 11px;
+}
+
+#color-legend ul li:nth-child(2) {
+  color: #333;
+}
+
+
+#infovis {
+    height:550px;
+    margin:auto;
+    overflow:hidden;
+    background: #222;
+    -moz-box-shadow: #000 0 0 3px;
+    -webkit-box-shadow: #000 0 0 3px;
+    box-shadow: #000 0 0 3px;
+    position: relative;
+}
+
+/*TOOLTIPS*/
+.tip {
+  color: #eee;
+  max-width: 139px;
+  background-color: #111;
+ opacity:0.9;
+  border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  font-size: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  padding:10px;
+}
+
+.tip {
+   text-align: left;
+   width:auto;
+   max-width:500px;
+}
+
+.tip-title {
+  font-size: 1.1em;
+  text-align:center;
+  margin-bottom:5px;
+}
+
+.tip-text {
+  font-family: Arial;
+  font-size: 0.95em;
+}
+
+footer {
+  margin: 35px auto;
+  font-size: 11px;
+  display: block;
+}

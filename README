@@ -1,0 +1,17 @@
+All content is Copyright Nicolas Garcia Belmonte and Maria Luz Caballero 
+distributed under the Creative Commons Attribution-ShareAlike 3.0 license 
+unless otherwise specified in the header of the files.
+
+The visualization is a Web Application. No server side interaction is needed. 
+These browsers are needed for the application: Firefox 4 beta, Safari 4+,
+Chrome 7+, Opera 10.6+.
+
+The visualization can be accessed by opening the <index.html> file in one of 
+the browsers listed above. The <index.html> file contains a description of the 
+pilot visualization and a link to the proper visualization, <pilot.html>.
+
+Enjoy!
+
+Nicolas Garcia Belmonte <philogb@gmail.com>
+
+Maria Luz Caballero <luzcaballero@gmail.com>

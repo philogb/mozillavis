@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Mozilla Open Data Visualization Challenge - Firefox 4 Beta Interface Study</title>
+<link href='http://fonts.googleapis.com/css?family=Crimson+Text&subset=latin' rel='stylesheet' type='text/css'>
+<link type="text/css" href="css/pilot.css" rel="stylesheet" />
+
+<script language="javascript" type="text/javascript" src="js/jit.js"></script>
+<script language="javascript" type="text/javascript" src="js/pilot.js"></script>
+</head>
+
+<body onload="init();">
+  <header>
+    <h1>
+      Firefox 4 Beta Interface Study
+    </h1>
+  </header>
+  <div class="panel">
+    <div class="description">
+      <b>How users interact with Firefox 4 UI components?</b> In this TreeMap the rectangles areas scale with the number of times a UI component was accessed. 
+      Color spans from red (beginners) to blue (expert users). Use the <b>left</b> and <b>right</b> mouse buttons to navigate the TreeMap.
+      <a href="index.html">Click here</a> if you want to know more.
+      <a href="#" id="go-to-parent" title="Set the parent node as root. Right clicking the visualization has the same effect than pressing this button.">Go to Parent</a>
+    </div>
+    <nav id="nav"></nav>
+  </div>
+  <div style="clear:both;margin-top:145px;"></div>
+  <div id="container">
+    <div id="color-legend">
+      <ul>
+        <li>Beginner</li>
+        <li>Familiar</li>
+        <li>Expert</li>
+      </ul>
+    </div>
+   <div id="infovis">
+      <div id="loading">Loading information, please wait...</div>
+    </div>    
+  </div>
+  <footer>
+  This project has been developed by 
+  <a href="http://blog.thejit.org/">Nicolas Garcia Belmonte</a> and 
+  <a href="http://uxnerd.com/">Maria Luz Caballero</a> 
+  </footer>
+</body>
+</html>
+

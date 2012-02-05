@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Mozilla Open Data Visualization Challenge - Firefox 4 Beta Interface Study</title>
+
+<link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+  html, body {
+    font-family: 'Crimson Text', Tahoma;
+    text-align: center;
+  }
+
+  article, footer {
+    display: block;
+  }
+
+  a, a:link, a:hover, a:visited {
+    color: #23A4FF;
+  }
+
+  a.launch {
+    font-size: 1.2em;
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+
+  article {
+    width: 600px;
+    margin: 30px auto;
+    text-align: justify;
+ }
+
+  article p {
+    line-height: 1.4em;
+    text-indent: 10px;
+    font-size: 1.1em;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  figcaption {
+    font-style: italic;
+    font-size: 0.8em;
+  }
+
+  footer {
+    margin: 40px auto 20px auto;
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+    <article>
+    <h1>
+      Firefox 4 Beta User Interface Study
+    </h1>
+    <p>
+    We present a visualization study of the interactions users have with Firefox 4 Beta UI 
+    components. This study provides an insight on how accessible these components are. We try to answer 
+    questions like: How frequently are these components being accessed? 
+    What are the main UI interaction differences between experienced and non-experienced Firefox users? 
+    How UI interactions change for people accessing Firefox from their Homes, Work, School or Mobile devices?
+    </p>
+    <p>
+    The main visualization is based on a Squarified TreeMap layout where each rectangle represents a UI component. 
+    The area of each rectangle is proportional to the number of times a UI component has been accessed; 
+    the color of each rectangle varies from red (beginners) to blue (advanced/power users).
+    </p>
+    <figure>
+      <img src="img/treemap1.png" alt="A TreeMap Layout" />
+      <figcaption>
+        A TreeMap layout of FF 4 beta UI Components. The area of the rectangles is proportional to the number 
+        of times the UI component was accessed. The color of each rectangle is proportional to the skill users accessing 
+        this UI component have with computers.
+      </figcaption>
+    </figure>
+    <p>
+    Hovering each rectangle of the TreeMap shows a tooltip with information about how frequently accessed that component is 
+    and also about the average skill level of the users accessing it.
+   </p>
+    <figure>
+      <img src="img/treemap2.png" alt="Drilling down to the combined menu" />
+      <figcaption>
+        Hovering the Navigation Toolbar component shows a tooltip with information about its access.
+      </figcaption>
+    </figure>
+    <p>
+    Left clicking on a rectangle sets the focus on that UI component group, right clicking on the visualization 
+    brings the user back to the previous level of the hierarchy.
+    </p>
+    <p>
+    We understand that making an average of the users' skills, although interesting for an overview, can lead to incorrect results. 
+    We solve this problem by adding a pie chart visualization that shows how users skills are distributed for a UI component.
+    </p>
+    <figure>
+      <img src="img/treemap3.png" alt="Drilling down enables a pie chart view for each UI component" />
+      <figcaption>
+        Drilling down enables a pie chart view for each UI component. Left and right click are used to either drill down or go back a level.
+      </figcaption>
+    </figure>
+    <p>
+    We also provide dynamic filtering based on different criteria such as the user experience with using Firefox, the 
+    user location when browsing the Web and whether the user browses the Web with other browsers besides Firefox. This dynamic 
+    filtering provides insights on how to make Firefox more accessible to different types of users. Also, the smooth animations 
+    provide an easy way to compare the main usage differences across categories of users. You can trigger these 
+    filters by clicking on the top buttons.
+    </p>
+    <figure>
+      <img src="img/buttons.png" alt="Filter Options" style="margin:0 100px;" />
+      <figcaption>
+      The user can filter by Time using Firefox, Location where Firefox is used and whether the users are exclusive FF users 
+      or not. Clicking on these filters will trigger smooth morphing animations.
+      </figcaption>
+    </figure>
+    </article>
+    
+    <a class="launch" href="pilot.html">Launch the Application</a>
+    
+    <footer>
+    This project has been developed by <a href="http://blog.thejit.org/">Nicolas Garcia Belmonte</a> 
+    and <a href="http://uxnerd.com/">Maria Luz Caballero</a>
+    </footer>
+</body>
+</html>
+
+
